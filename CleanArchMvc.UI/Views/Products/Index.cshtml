@@ -1,9 +1,13 @@
-﻿@model IEnumerable<CleanArchMvc.Application.DTOs.CategoryDTO>
+﻿@model IEnumerable<CleanArchMvc.Application.DTOs.ProductDTO>
 
 @{
-    ViewData["Title"] = "Categories Management";
+    ViewData["Title"] = "Products Management";
 }
-
+<style>
+    .modal-lg {
+        max-width: 80%;
+    }
+</style>
 <div>
     <h2>@ViewData["Title"]</h2>
 </div>
@@ -27,6 +31,12 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -36,6 +46,12 @@
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning">
